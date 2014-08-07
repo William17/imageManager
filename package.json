@@ -1,0 +1,13 @@
+{
+  "name": "imageManager",
+  "version": "0.0.1",
+  "description": "imageManager",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "William Leung",
+  "license": "MIT",
+  "dependencies": {
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!--
+/*
+ * jQuery File Upload Plugin Basic Demo 1.2.4
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+-->
+<html lang="en">
+<head>
+<!-- Force latest IE rendering engine or ChromeFrame if installed -->
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+<meta charset="utf-8">
+<title>jQuery File Upload Demo - Basic version</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap styles -->
+<link href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+.image-manager-modal .modal-body .row>div{
+  height: 100px;
+}
+.image-manager-modal .modal-body .row>div img{
+  max-height: 80px;
+}
+.image-manager-modal .upload-button {
+  position: relative;
+  overflow: hidden;
+}
+.image-manager-modal .upload-button label{
+  opacity: 0;
+  display: block;
+  z-index: 9999;
+  position: absolute;
+  top: 0 ;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  -ms-filter: 'alpha(opacity=0)';
+  cursor: pointer;
+}
+.image-manager-modal .pagination{
+  margin: 0px;
+}
+.image-manager-modal .navbar-nav{
+  margin-left: -30px;
+}
+.image-manager-modal a.thumbnail:hover, 
+.image-manager-modal a.thumbnail:focus,
+.image-manager-modal a.thumbnail.active{
+  background: #428bca
+}
+.image-manager-modal .progress{
+  position: absolute;
+  top: 55px;
+  z-index: 9999;
+  width:100%;
+  height: 5px;
+}
+</style>
+</head>
+<body>
+
+<div class="image-manager">
+  <button id="up">选择图片</button>
+  <input name="url"  type="hidden" />
+  <input name="thumb"  type="hidden" />
+  <img src="" style="display:none;" class='_image'/>
+</div>
+
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+<script src="./lib/jquery.ui.widget.js"></script>
+<!-- The basic File Upload plugin -->
+<script src="./lib/jquery.fileupload.js"></script>
+<!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
+<script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="http://libs.baidu.com/underscore/1.3.3/underscore-min.js"></script>
+<script src="./src/imageManager.js" ></script>
+<script type="text/javascript">
+  new ImageManager({
+    open:'#up',
+    url:'/adminApi/v2/image'
+  })
+
+</script>
+
+<input type="file" id="sfile" />
+<script type="text/javascript">
+  $(function(){
+    $('#sfile').change(function(event){
+      console && console.log(event);
+    });
+  })
+</script>
+
+</body> 
+</html>
